@@ -1,35 +1,72 @@
-<p id="notice"><%= notice %></p>
+<article class="slds-card">
+  <div class="slds-card__header slds-grid">
+    <header class="slds-media slds-media--center slds-has-flexi-truncate">
+      <div class="slds-media__figure">
+        <span class="slds-icon_container slds-icon-standard-contact" title="description of icon when needed">
+          <svg class="slds-icon slds-icon--small" aria-hidden="true">
+            <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#contact"></use>
+          </svg>
+        </span>
+      </div>
+      <div class="slds-media__body">
+        <h2>
+          <a href="javascript:void(0);" class="slds-card__header-link slds-truncate">
+            <span class="slds-text-heading--small">登録者一覧</span>
+          </a>
+        </h2>
+      </div>
+    </header>
+    <div class="slds-no-flex">
+      <button class="slds-button slds-button--neutral"><%= link_to ' 新規追加 ', new_person_path %></button>
+    </div>
+  </div>
+  <div class="slds-card__body">登録されているメンバーの一覧です</div>
+  <div class="slds-card__footer">@TEST</div>
+</article>
 
-<h1>Listing People</h1>
+<div class="slds-grid slds-wrap slds-grid--pull-padded">
+  <div class="slds-p-horizontal--small slds-size--1-of-1">
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+      <thead>
+        <tr class="slds-text-title--caps">
+          <th scope="col">
+            <div class="slds-truncate" title="Opportunity Name">名前</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Opportunity Name">生誕日</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Opportunity Name">出身地</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Opportunity Name">身長</div>
+          </th>
+          <th scope="col">
+            <div class="slds-truncate" title="Opportunity Name">事務所</div>
+          </th>
+        </tr>
+      </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Birth</th>
-      <th>Home</th>
-      <th>Height</th>
-      <th>Office</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @people.each do |person| %>
-      <tr>
-        <td><%= person.name %></td>
-        <td><%= person.birth %></td>
-        <td><%= person.home %></td>
-        <td><%= person.height %></td>
-        <td><%= person.office %></td>
-        <td><%= link_to 'Show', person %></td>
-        <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Person', new_person_path %>
+      <tbody>
+        <% @people.each do |person| %>
+        <tr>
+          <td data-label="Name">
+            <div class="slds-truncate" title="<%= person.name %>"><%= link_to "#{person.name}", person %></div>
+          </td>
+          <td data-label="Birth">
+            <div class="slds-truncate" title="<%= person.birth %>"><%= person.birth %></div>
+          </td>
+          <td data-label="Home">
+            <div class="slds-truncate" title="<%= person.home %>"><%= person.home %></div>
+          </td>
+          <td data-label="Height">
+            <div class="slds-truncate" title="<%= person.height %>"><%= person.height %></div>
+          </td>
+          <td data-label="Office">
+            <div class="slds-truncate" title="<%= person.office %>"><%= person.office %></div>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
