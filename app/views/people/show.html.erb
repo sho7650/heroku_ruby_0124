@@ -1,29 +1,52 @@
+<div class="slds-page-header">
+  <div class="slds-grid">
+    <div class="slds-col slds-has-flexi-truncate">
+      <div class="slds-media slds-no-space slds-grow">
+        <div class="slds-media__figure">
+          <svg class="slds-icon slds-icon-standard-user" aria-hidden="true">
+
+          </svg>
+        </div>
+        <div class="slds-media__body">
+          <p class="slds-text-title--caps slds-line-height--reset">メンバー</p>
+          <h1 class="slds-page-header__title slds-m-right--small slds-align-middle slds-truncate" title="this should match the Record Title"><%= @person.name %></h1>
+        </div>
+      </div>
+    </div>
+    <div class="slds-col slds-no-flex slds-grid slds-align-top">
+      <div class="slds-button-group" role="group">
+        <button class="slds-button slds-button--neutral"><%= link_to '編集', edit_person_path(@person) %></button>
+        <button class="slds-button slds-button--neutral">削除</button>
+        <button class="slds-button slds-button--neutral"><%= link_to '戻る', people_path %></button>
+        <div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-button--last" aria-expanded="false">
+          <button class="slds-button slds-button--icon-border-filled" aria-haspopup="true" title="More Actions">
+            <svg class="slds-button__icon" aria-hidden="true">
+              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#down"></use>
+            </svg>
+            <span class="slds-assistive-text">More Actions</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul class="slds-grid slds-page-header__detail-row">
+    <li class="slds-page-header__detail-block">
+      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 1">誕生日</p>
+      <p class="slds-text-body--regular slds-truncate" title="Birthdate"><%= @person.birth %></p>
+    </li>
+    <li class="slds-page-header__detail-block">
+      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 2">年齢</p>
+      <p class="slds-text-body--regular slds-truncate" title="Birthdate"><%= @person.age %></p>
+    </li>
+    <li class="slds-page-header__detail-block">
+      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 3">身長</p>
+      <p class="slds-text-body--regular slds-truncate" title="Birthdate"><%= @person.height %></p>
+    </li>
+    <li class="slds-page-header__detail-block">
+      <p class="slds-text-title slds-truncate slds-m-bottom--xx-small" title="Field 4">事務所</p>
+      <p class="slds-text-body--regular slds-truncate" title="Birthdate"><%= @person.office %></p>
+    </li>
+  </ul>
+</div>
+
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @person.name %>
-</p>
-
-<p>
-  <strong>Birth:</strong>
-  <%= @person.birth %>
-</p>
-
-<p>
-  <strong>Home:</strong>
-  <%= @person.home %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @person.height %>
-</p>
-
-<p>
-  <strong>Office:</strong>
-  <%= @person.office %>
-</p>
-
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>

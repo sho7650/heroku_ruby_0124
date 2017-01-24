@@ -1,37 +1,85 @@
 <%= form_for(@person) do |f| %>
-  <% if @person.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+<% if @person.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
 
-      <ul>
-      <% @person.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <ul>
+    <% @person.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="slds-m-vertical--medium">
+  <div class="slds-m-horizontal--medium">
+    <div class="slds-grid slds-wrap slds-grid--pull-padded">
+      <div class="slds-p-horizontal--small slds-size--1-of-1">
+        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+          <tbody>
+            <tr>
+              <td data-label="name">
+                <div class="slds-form-element">
+                  <div class="field">
+                    <label class="slds-form-element__label" for="input_name">名前</label>
+                    <div class="slds-form-element__control">
+                      <%= f.text_field :name, :class => 'slds-input', :id => 'input_name' %>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="birth">
+                <div class="slds-form-element">
+                  <div class="field">
+                    <label class="slds-form-element__label" for="input_birth">誕生日</label>
+                    <div class="slds-form-element__control">
+                      <div class="slds-select_container">
+                        <%= f.date_select :birth, :start_year => 1940, :class => 'slds-select', :id => 'input_birth' %>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="home">
+                <div class="slds-form-element">
+                  <div class="field">
+                    <label class="slds-form-element__label" for="input_home">出身地</label>
+                    <div class="slds-form-element__control">
+                      <%= f.text_field :home, :class => 'slds-input', :id => 'input_home' %>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="height">
+                <div class="slds-form-element">
+                  <div class="field">
+                    <label class="slds-form-element__label" for="input_height">身長</label>
+                    <div class="slds-form-element__control">
+                      <%= f.text_field :height, :class => 'slds-input', :id => 'input_height' %>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="office">
+                <div class="slds-form-element">
+                  <div class="field">
+                    <label class="slds-form-element__label" for="input_office">事務所</label>
+                    <div class="slds-form-element__control">
+                      <%= f.text_field :office, :class => 'slds-input', :id => 'input_office' %>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td data-label="actions">
+                <div class="actions">
+                  <%= f.submit %>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :birth %><br>
-    <%= f.date_select :birth, :start_year => 1900 %>
-  </div>
-  <div class="field">
-    <%= f.label :home %><br>
-    <%= f.text_field :home %>
-  </div>
-  <div class="field">
-    <%= f.label :height %><br>
-    <%= f.text_field :height %>
-  </div>
-  <div class="field">
-    <%= f.label :office %><br>
-    <%= f.text_field :office %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+</div>
 <% end %>
