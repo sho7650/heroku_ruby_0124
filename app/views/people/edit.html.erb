@@ -1,6 +1,19 @@
-<h1>Editing Person</h1>
+<div class="slds-m-around--medium">
+  <div class="slds-page-header" role="banner">
+    <div class="slds-media">
+      <div class="slds-media__figure">
+        <svg class="slds-icon slds-icon-standard-opportunity" aria-hidden="true">
+
+        </svg>
+      </div>
+      <div class="slds-media__body">
+        <p class="slds-page-header__title slds-truncate" title="Editing Person">メンバーの編集</p>
+        <p class="slds-text-body--small">名前・誕生日・出身地・身長・事務所 : 年齢は自動計算されます</p>
+      </div>
+    </div>
+  </div>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @person %> |
-<%= link_to 'Back', people_path %>
+<button class="slds-button slds-button--neutral"><%= link_to 'Show', @person %></button>
+<button class="slds-button slds-button--neutral"><%= link_to 'Back', people_path %></button>
