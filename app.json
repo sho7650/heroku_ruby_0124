@@ -1,5 +1,12 @@
 {
   "name": "heroku_ruby_0124",
+  "environments": {
+    "test": {
+      "addons":[
+        "heroku-postgresql"
+      ]
+    }
+  },
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate db:seed"
   },
