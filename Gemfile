@@ -38,4 +38,5 @@ group :production do
   gem 'pg', '~> 0.15'
   # Use easily Heroku with Rails
   gem 'rails_12factor'
+  gem 'uglifier'
 end
