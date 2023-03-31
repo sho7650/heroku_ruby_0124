@@ -12,7 +12,7 @@ jobs:
           DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
       # The following example uses the official postgres 9.6 image, you may also use cimg/postgres:9.6
       # which includes a few enhancements and modifications. どちらのイメージも使用できます。
-      - image: cimg/postgres:15.2.0
+      - image: cimg/postgres:14.0.0
 #        auth:
 #          username: mydockerhub-user
 #          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
