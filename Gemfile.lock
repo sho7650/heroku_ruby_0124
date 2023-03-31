@@ -100,7 +100,9 @@ GEM
     nokogiri (1.14.2)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    pg (0.21.0)
+    pg (1.4.6)
+    puma (6.2.0)
+      nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.6.4)
     rack-test (2.1.0)
@@ -187,7 +189,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  pg (~> 0.15)
+  pg (~> 1.4)
+  puma
   rails (~> 6.0)
   rails_12factor
   rake
@@ -198,7 +201,7 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 RUBY VERSION
-   ruby 2.7.7p221
+   ruby 3.2.1p31
 
 BUNDLED WITH
-   1.17.2
+   2.4.10

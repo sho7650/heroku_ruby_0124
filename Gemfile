@@ -8,6 +8,7 @@ gem 'rake'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0'
+gem 'puma'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -35,7 +36,7 @@ end
 
 group :production do
   # Use postgresql as the database for Active Record
-  gem 'pg', '~> 0.15'
+  gem 'pg', '~> 1.4'
   # Use easily Heroku with Rails
   gem 'rails_12factor'
   gem 'uglifier'
