@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-ruby "2.6.6"
+ruby "2.7.7"
 
 gem 'rspec'
 gem 'rspec-rails'
 gem 'rake'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.0'
+gem 'rails', '~> 6.0'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
