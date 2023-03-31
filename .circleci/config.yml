@@ -24,4 +24,4 @@ jobs:
       - checkout
       - run: bundle install
       - run: bundle exec rake db:migrate db:seed
-
+      - run: bundle exec rake spec
