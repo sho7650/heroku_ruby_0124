@@ -16,7 +16,7 @@
     <div class="slds-col slds-no-flex slds-grid slds-align-top">
       <div class="slds-button-group" role="group">
         <button class="slds-button slds-button--neutral"><%= link_to '編集', edit_person_path(@person) %></button>
-        <button class="slds-button slds-button--neutral">削除</button>
+        <button class="slds-button slds-button--neutral"><%= button_to '削除', @person, method: :delete %></button>
         <button class="slds-button slds-button--neutral"><%= link_to '戻る', people_path %></button>
         <div class="slds-dropdown-trigger slds-dropdown-trigger--click slds-button--last" aria-expanded="false">
           <button class="slds-button slds-button--icon-border-filled" aria-haspopup="true" title="More Actions">
