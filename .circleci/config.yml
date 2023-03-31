@@ -19,13 +19,8 @@ jobs:
         environment:
           POSTGRES_USER: ubuntu
           POSTGRES_DB: db_name
+
     steps:
       - checkout
-      - run:
-          name: Install Ruby Dependencies
-          command: bundle install
-      - run:
-          name: Set up DB
-          command: bundle exec rake db:migrate db:seed
-        environment:
-          DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
+      - run: bundle install
+      - run: bundle exec rake db:migrate db:seed
