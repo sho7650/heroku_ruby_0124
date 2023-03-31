@@ -1,4 +1,5 @@
 # Ruby開発者のためのHeroku入門
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/sho7650/heroku_ruby_0124/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/sho7650/heroku_ruby_0124/tree/main)
 
 ## セミナー概要
 
