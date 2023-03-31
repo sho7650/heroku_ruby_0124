@@ -117,4 +117,42 @@ RSpec.describe PeopleController, type: :controller do
       end
     end
   end
+  
+  describe "PATCH #update" do
+    let!(:person) { create(:person) }
+  
+    context "with valid params" do
+      it "updates the requested person" do
+        valid_params = { person: { name: "new name" } }
+        patch :update, params: valid_params.merge(id: person.id)
+        person.reload
+        expect(person.name).to eq("new name")
+      end
+  
+      it "redirects to the person" do
+        valid_params = { person: { name: "new name" } }
+        patch :update, params: valid_params.merge(id: person.id)
+        expect(response).to redirect_to(person)
+      end
+    end
+  
+    context "with invalid params" do
+      let(:invalid_params) do
+        { person: { name: "" } }
+      end
+  
+      it "does not update the requested person" do
+        patch :update, params: invalid_params.merge(id: person.id)
+        person.reload
+        expect(person.name).to_not eq("")
+      end
+  
+      it "re-renders the edit method" do
+        patch :update, params: invalid_params.merge(id: person.id)
+        expect(response).to render_template(:edit)
+      end
+    end
+  end
 end
+
+
