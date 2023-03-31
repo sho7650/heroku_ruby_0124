@@ -5,20 +5,17 @@ jobs:
 #    working_directory: ~/appName
     docker:
       - image: cimg/ruby:3.2.1
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+#        auth:
+#          username: mydockerhub-user
+#          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment:
-          PG_HOST: localhost
-          PG_USER: ubuntu
-          RAILS_ENV: test
-          RACK_ENV: test
+          DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
       # The following example uses the official postgres 9.6 image, you may also use cimg/postgres:9.6
       # which includes a few enhancements and modifications. どちらのイメージも使用できます。
-      - image: cimg/postgres:14.0
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      - image: cimg/postgres:15.2.0
+#        auth:
+#          username: mydockerhub-user
+#          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
         environment:
           POSTGRES_USER: ubuntu
           POSTGRES_DB: db_name
@@ -30,7 +27,8 @@ jobs:
       - run:
           name: Set up DB
           command: |
-            bundle exec rake db:create db:schema:load --trace
+#            bundle exec rake db:create db:schema:load --trace
             bundle exec rake db:migrate db:seed
+ 
         environment:
           DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
