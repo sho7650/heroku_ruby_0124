@@ -191,17 +191,17 @@ PLATFORMS
 DEPENDENCIES
   pg (~> 1.4)
   puma
-  rails (~> 6.0)
+  rails (~> 6.1, >= 6.1.7.3)
   rails_12factor
   rake
   rspec
   rspec-rails
   sqlite3
   uglifier
-  web-console (~> 2.0)
+  web-console (~> 2.3, >= 2.3.0)
 
 RUBY VERSION
    ruby 3.2.1p31
 
 BUNDLED WITH
-   2.4.10
+   2.4.6

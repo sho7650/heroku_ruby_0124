@@ -7,7 +7,7 @@ gem 'rspec-rails'
 gem 'rake'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.0'
+gem 'rails', '~> 6.1', '>= 6.1.7.3'
 gem 'puma'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
@@ -31,7 +31,7 @@ group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 2.3', '>= 2.3.0'
 end
 
 group :production do
