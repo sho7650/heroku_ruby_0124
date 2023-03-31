@@ -26,9 +26,6 @@ jobs:
           command: bundle install
       - run:
           name: Set up DB
-          command: |
-#            bundle exec rake db:create db:schema:load --trace
-            bundle exec rake db:migrate db:seed
- 
+          command: bundle exec rake db:migrate db:seed
         environment:
           DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
