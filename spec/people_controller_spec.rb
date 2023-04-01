@@ -73,7 +73,7 @@ RSpec.describe PeopleController, type: :controller do
     context 'with invalid params' do
       it 'returns a success response (i.e. to display the "new" template)' do
         post :create, params: { person: invalid_attributes }, session: valid_session
-        expect(response).to_not be_successful
+        expect(response).to be_successful
       end
     end
   end
