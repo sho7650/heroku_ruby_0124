@@ -114,7 +114,7 @@ RSpec.describe PeopleController, type: :controller do
       it 're-renders the new method' do
         post :create, params: invalid_params
         expect(response).to render_template(:new)
-      end
+      end     
     end
   end
 end

@@ -34,11 +34,9 @@ group :development do
   gem 'web-console', '~> 2.3', '>= 2.3.0'
 end
 
-=begin
 group :test do
   gem 'rails-controller-testing'
 end
-=end
 
 group :production do
   # Use postgresql as the database for Active Record
