@@ -8,7 +8,7 @@
     }
   },
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate db:seed"
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
     "SECRET_KEY_BASE": {
