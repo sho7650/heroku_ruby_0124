@@ -5,9 +5,10 @@ ruby "3.2.2"
 gem 'rspec'
 gem 'rspec-rails'
 gem 'rake'
+gem 'rack', '~> 2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1', '>= 6.1.7.3'
+gem 'rails', '>= 7.0.4'
 gem 'puma'
 # Use SCSS for stylesheets
 # gem 'sass-rails', '~> 5.0'
