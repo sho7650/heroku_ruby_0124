@@ -5,7 +5,7 @@ ruby "3.2.2"
 gem 'rspec'
 gem 'rspec-rails'
 gem 'rake'
-gem 'rack', '~> 2.2.0'
+gem 'rack', '~> 3.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 7.0.4'
