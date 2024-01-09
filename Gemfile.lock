@@ -102,12 +102,12 @@ GEM
       timeout
     net-smtp (0.3.3)
       net-protocol
-    nio4r (2.5.9)
+    nio4r (2.7.0)
     nokogiri (1.14.3)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     pg (1.5.3)
-    puma (6.2.2)
+    puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.6.2)
     rack (2.2.7)
@@ -200,7 +200,7 @@ PLATFORMS
 
 DEPENDENCIES
   pg (~> 1.4)
-  puma
+  puma (>= 6.4.2)
   rack (~> 2.2.0)
   rails (>= 7.0.4)
   rails-controller-testing
@@ -216,4 +216,4 @@ RUBY VERSION
    ruby 3.2.2p53
 
 BUNDLED WITH
-   2.4.12
+   2.4.6
