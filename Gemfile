@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby "3.2.2"
 
 gem 'rspec'
-gem 'rspec-rails'
+gem 'rspec-rails', '>= 8.0.0'
 gem 'rake'
 gem 'rack', '~> 2.2.0'
 
