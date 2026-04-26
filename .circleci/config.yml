@@ -2,26 +2,13 @@ version: 2
 
 jobs:
   build:
-#    working_directory: ~/appName
     docker:
       - image: cimg/ruby:3.2.2
-#        auth:
-#          username: mydockerhub-user
-#          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-        environment:
-          DATABASE_URL: "postgres://ubuntu@localhost:5432/db_name"
-      # The following example uses the official postgres 9.6 image, you may also use cimg/postgres:9.6
-      # which includes a few enhancements and modifications. どちらのイメージも使用できます。
-      - image: cimg/postgres:14.0
-#        auth:
-#          username: mydockerhub-user
-#          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-        environment:
-          POSTGRES_USER: ubuntu
-          POSTGRES_DB: db_name
 
     steps:
       - checkout
       - run: bundle install
-      - run: bundle exec rake db:migrate db:seed
+      - run: bundle exec bundler-audit check --update
+      - run: bundle exec brakeman --no-pager -q -w2
+      - run: bundle exec rake db:migrate
       - run: bundle exec rake spec
