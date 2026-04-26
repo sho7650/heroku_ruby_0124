@@ -26,8 +26,14 @@ require 'rspec/rails'
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
+TEST_BASIC_AUTH = { username: 'test-admin', password: 'test-password' }.freeze
+
 RSpec.configure do |config|
   config.include ActiveSupport::Testing::TimeHelpers
+
+  config.before(:each) do
+    allow(Rails.application.credentials).to receive(:basic_auth).and_return(TEST_BASIC_AUTH)
+  end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = ["#{::Rails.root}/spec/fixtures"]
