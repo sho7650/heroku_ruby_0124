@@ -1,48 +1,33 @@
 source 'https://rubygems.org'
 
-ruby "3.2.2"
+ruby "3.4.9"
 
-gem 'rspec'
-gem 'rspec-rails'
+gem 'rails', '~> 7.2.3'
+gem 'puma', '~> 6.4'
+gem 'rack', '~> 2.2', '>= 2.2.13'
+gem 'nokogiri', '~> 1.16'
+gem 'sprockets-rails'
+gem 'pagy', '~> 9.0'
 gem 'rake'
-gem 'rack', '~> 2.2.0'
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>= 7.0.4'
-gem 'puma'
-# Use SCSS for stylesheets
-# gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-# gem 'uglifier', '>= 1.3.0'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-# gem 'sdoc', '~> 0.4.0', group: :doc
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.3', '>= 2.3.0'
+  gem 'sqlite3', '~> 2.0'
+  gem 'web-console', '>= 4.2'
+end
+
+group :development, :test do
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'bundler-audit', require: false
+  gem 'brakeman', require: false
 end
 
 group :test do
   gem 'rails-controller-testing'
+  gem 'pg', '~> 1.5'
 end
 
 group :production do
-  # Use postgresql as the database for Active Record
-  gem 'pg', '~> 1.4'
-  # Use easily Heroku with Rails
-  gem 'rails_12factor'
+  gem 'pg', '~> 1.5'
   gem 'uglifier'
 end

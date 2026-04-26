@@ -33,9 +33,25 @@ Webセミナー内で使用したサンプルプログラムを公開してい�
 4. `heroku login` にて、Heroku へログインを済ませる
 5. `heroku create` により、Heroku へ新たにアプリのデプロイ環境を作成する
 6. `heroku addons:create heroku-postgresql:hobby-dev` を実行し、Heroku Postgres を利用できるようにする
-7. `git push heroku master` で、作成した Heroku へアプリケーションをデプロイ
-8. `heroku open` でデプロイしたアプリケーションの稼働確認ができます
-9. ログを確認する場合には `heroku logs` を利用ください
+7. `heroku config:set RAILS_MASTER_KEY=$(cat config/master.key)` で credentials 復号鍵を設定する（**push 前に必須**）
+8. `git push heroku master` で、作成した Heroku へアプリケーションをデプロイ
+9. `heroku open` でデプロイしたアプリケーションの稼働確認ができます
+10. ログを確認する場合には `heroku logs` を利用ください
+
+### 認証情報の管理
+
+`config/master.key` は **絶対にコミットしない**（`.gitignore` 済み）。
+チームで共有する場合はパスワードマネージャ等で安全に共有すること。
+
+credentials 内容を編集するには:
+
+```sh
+EDITOR=vim bin/rails credentials:edit
+```
+
+含まれる項目:
+- `secret_key_base` — Cookie 署名鍵（ローテーション時は全セッション無効化）
+- `basic_auth.username` / `basic_auth.password` — `/people` への HTTP Basic 認証
 
 ## もっとかんたんな使い方
 
