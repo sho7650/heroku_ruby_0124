@@ -129,6 +129,7 @@ GEM
     nio4r (2.7.5)
     nokogiri (1.19.2-arm64-darwin)
       racc (~> 1.4)
+    pagy (9.4.0)
     pg (1.6.3-arm64-darwin)
     pp (0.6.3)
       prettyprint
@@ -249,6 +250,7 @@ DEPENDENCIES
   brakeman
   bundler-audit
   nokogiri (~> 1.16)
+  pagy (~> 9.0)
   pg (~> 1.5)
   puma (~> 6.4)
   rack (~> 2.2, >= 2.2.13)

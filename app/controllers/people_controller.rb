@@ -3,7 +3,7 @@ class PeopleController < ApplicationController
 
   # GET /people
   def index
-    @people = Person.all
+    @pagy, @people = pagy(Person.order(:id))
   end
 
   # GET /people/1

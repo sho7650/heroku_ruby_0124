@@ -7,6 +7,7 @@ gem 'puma', '~> 6.4'
 gem 'rack', '~> 2.2', '>= 2.2.13'
 gem 'nokogiri', '~> 1.16'
 gem 'sprockets-rails'
+gem 'pagy', '~> 9.0'
 gem 'rake'
 
 group :development do

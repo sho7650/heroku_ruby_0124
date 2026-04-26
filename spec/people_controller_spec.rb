@@ -109,18 +109,15 @@ RSpec.describe PeopleController, type: :controller do
     end
 
     context 'with invalid params' do
-      let(:invalid_params) { { person: { name: '', birth: '', home: '', height: '', office: '' } } }
-  
-      it 'does not save the new person' do
-        expect {
-          post :create, params: invalid_params
-        }.to_not change(Person, :count)
+      it 'does not change the record and re-renders edit' do
+        person = Person.create! valid_attributes
+        original_name = person.name
+
+        patch :update, params: { id: person.to_param, person: { name: '' } }, session: valid_session
+
+        expect(person.reload.name).to eq(original_name)
+        expect(response).to render_template(:edit)
       end
-  
-      it 're-renders the new method' do
-        post :create, params: invalid_params
-        expect(response).to render_template(:new)
-      end     
     end
   end
 end
