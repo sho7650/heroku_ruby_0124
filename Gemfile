@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "3.2.2"
+ruby "3.4.9"
 
 gem 'rails', '~> 7.2.3'
 gem 'puma', '~> 6.4'
@@ -11,7 +11,7 @@ gem 'pagy', '~> 9.0'
 gem 'rake'
 
 group :development do
-  gem 'sqlite3', '~> 1.7'
+  gem 'sqlite3', '~> 2.0'
   gem 'web-console', '>= 4.2'
 end
 
