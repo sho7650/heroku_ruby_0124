@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby "3.4.9"
 
-gem 'rails', '~> 7.2.3'
+gem 'rails', '~> 8.0.0'
 gem 'puma', '~> 6.4'
 gem 'rack', '~> 2.2', '>= 2.2.13'
 gem 'nokogiri', '~> 1.16'
@@ -12,12 +12,12 @@ gem 'rake'
 
 group :development do
   gem 'sqlite3', '~> 2.0'
-  gem 'web-console', '>= 4.2'
+  gem 'web-console', '>= 4.3.0'
 end
 
 group :development, :test do
   gem 'rspec'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 8.0.0'
   gem 'bundler-audit', require: false
   gem 'brakeman', require: false
 end
