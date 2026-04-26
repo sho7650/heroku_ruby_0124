@@ -25,6 +25,12 @@ RSpec.describe PeopleController, type: :controller do
 
   let(:valid_session) { {} }
 
+  before do
+    creds = Rails.application.credentials.basic_auth
+    request.env['HTTP_AUTHORIZATION'] =
+      ActionController::HttpAuthentication::Basic.encode_credentials(creds.fetch(:username), creds.fetch(:password))
+  end
+
   describe 'GET #index' do
     it 'returns a success response' do
       person = Person.create! valid_attributes
